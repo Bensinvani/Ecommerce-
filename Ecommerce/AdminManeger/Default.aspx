@@ -11,11 +11,11 @@
                         <div class="card" style="width: 18rem;">
                           <img src="../images/Clients/<%#Eval("ClientPic") %>" class="card-img-top" alt="..." >
                           <div class="card-body">
-                            <h5 class="card-title"><%#Eval("ClientFirstName")  %></h5>
-                            <p class="card-text"><%#Eval("ClientPhone") %></p>
-                            <p class="card-text"><%#Eval("ClientEmail") %></p>
-                            <p class="card-text"><%#Eval("ClientId") %></p>
-                            <p class="card-text"><%#Eval("ClientAddress") %></p>
+                            <h5 class="card-title">First Name: <%#Eval("ClientFirstName")  %></h5>
+                            <p class="card-text">Phone: <%#Eval("ClientPhone") %></p>
+                            <p class="card-text">Email: <%#Eval("ClientEmail") %></p>
+                            <p class="card-text">ID: <%#Eval("ClientId") %></p>
+                            <p class="card-text">Address: <%#Eval("ClientAddress") %></p>
                             <a href="#" class="btn btn-success"><%#Eval("ClientStatus") %></a>
                           </div>
                         </div>
