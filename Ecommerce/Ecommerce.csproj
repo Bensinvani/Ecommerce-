@@ -94,6 +94,7 @@
     <Content Include="AdminManeger\js\sb-admin-2.js" />
     <Content Include="AdminManeger\js\sb-admin-2.min.js" />
     <Content Include="AdminManeger\login.html" />
+    <Content Include="AdminManeger\ProductAddEdit.aspx" />
     <Content Include="AdminManeger\PRO_UPGRADE.txt" />
     <Content Include="AdminManeger\register.html" />
     <Content Include="AdminManeger\tables.html" />
@@ -1825,6 +1826,13 @@
     <Compile Include="AdminManeger\BackAdmin.Master.designer.cs">
       <DependentUpon>BackAdmin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminManeger\ProductAddEdit.aspx.cs">
+      <DependentUpon>ProductAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManeger\ProductAddEdit.aspx.designer.cs">
+      <DependentUpon>ProductAddEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BLL\City.cs" />
     <Compile Include="App_Code\BLL\Product.cs" />
     <Compile Include="App_Code\BLL\Category.cs" />
@@ -2124,6 +2132,7 @@
     <Content Include="AdminManeger\vendor\jquery\jquery.min.map" />
     <Content Include="AdminManeger\vendor\jquery\jquery.slim.min.map" />
     <Content Include="AdminManeger\BackAdmin.Master" />
+    <Content Include="AdminManeger\js\he.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

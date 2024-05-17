@@ -8,6 +8,7 @@ using System.Web.SessionState;
 using System.Data; // זה בשביל קורא הנתונים
 using System.Data.SqlClient;
 using Ecommerce.App_Code; // זה בשביל האובייקטים לעבודה מול בסיס הנתונים
+using System.Configuration; // שימוש בספריית הקונפגורציה של חיבור המחרוזת
 
 namespace Ecommerce
 {
@@ -19,7 +20,7 @@ namespace Ecommerce
             Product p; // יצירת משתנה ייחוס מסוג מוצר
             List<Product> LstProd = new List<Product>(); // יצירת רשימה של המוצרים
 
-            string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\EcommerceDB.mdf;Integrated Security=True;MultipleActiveResultSets=True;";
+            string ConnStr = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString; // שליפת מחרוזת ההתחברות מתוך קובץ הגדרות האפליקציה / שרת web.config
             SqlConnection Conn = new SqlConnection(ConnStr); // יצירת אובייקט מסוג צינור והגדרת מחרוזת ההתחברות של הצינור לבסיס הנתונים 
             
             //Conn.ConnectionString = ConnStr; // הגדרת מחרוזת ההתחברות לאחר יצירת האובייקט, זו אופציה נוספת להגדרה

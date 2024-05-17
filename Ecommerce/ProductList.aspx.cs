@@ -22,9 +22,9 @@ namespace Ecommerce
                 LstProd = (List<Product>)Application["Products"];
 
                 // קישור רשימת המוצרים עם הריפטר
-                RptProducts.DataSource = LstProd;
+                RptProd.DataSource = LstProd;
                 // עבור כל פריט במקור הנתונים , יתבצע שכפול של האייטם טמפלייט של הרשיפטר
-                RptProducts.DataBind(); //  קשירת הנתונים לריפטר 
+                RptProd.DataBind(); //  קשירת הנתונים לריפטר 
             }
         }
     }
