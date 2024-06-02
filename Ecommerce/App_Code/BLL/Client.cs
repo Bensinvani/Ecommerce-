@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecommerce.App_Code.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,5 +19,25 @@ namespace Ecommerce.App_Code
         public string ClientStatus { get; set; } // סטאטוס הלקוח
         public string ClientPic { get; set; } // תמונה של הלקוח
         public DateTime ClientAddedDate { get; set; } // תאריך הוספה
+
+        public static List<Client> GetAll()
+        {
+            return ClientDAL.GetAll();
+        }
+
+        public static Client GetById(int Id)
+        {
+            return ClientDAL.GetById(Id);
+        }
+
+        public void Save()
+        {
+            ClientDAL.Save(this);
+        }
+
+        public static void Delete(int Id)
+        {
+            ClientDAL.Delete(Id);
+        }
     }
 }

@@ -9,6 +9,9 @@ using System.Data; // זה בשביל קורא הנתונים
 using System.Data.SqlClient;
 using Ecommerce.App_Code; // זה בשביל האובייקטים לעבודה מול בסיס הנתונים
 using System.Configuration; // שימוש בספריית הקונפגורציה של חיבור המחרוזת
+using DATA;
+using Ecommerce.App_Code.BLL;
+using System.Web.UI;
 
 namespace Ecommerce
 {
@@ -17,12 +20,28 @@ namespace Ecommerce
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Product p; // יצירת משתנה ייחוס מסוג מוצר
+            Application["Products"] = Product.GetAll(); // שמירת רשימת המוצרים באפליקציה
+            Application["Clients"] = Client.GetAll(); // שמירת רשימת הלקוחות באפליקציה
+            Application["Categories"] = Category.GetAll(); // שמירת רשימת הקטגוריות באפליקציה
+            Application["Cities"] = City.GetAll(); // שמירת רשימת הערים באפליקציה
+
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", new ScriptResourceDefinition
+            {
+                Path = "~/scripts/jquery-3.6.0.min.js",
+                DebugPath = "~/scripts/jquery-3.6.0.js",
+                CdnPath = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+                CdnDebugPath = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js",
+                CdnSupportsSecureConnection = true,
+                LoadSuccessExpression = "window.jQuery"
+            });
+
+            //============= קוד לדוגמה שהתחלנו בכיתה עם נתונים פיקטיביים ===========//
+            /*Product p; // יצירת משתנה ייחוס מסוג מוצר
             List<Product> LstProd = new List<Product>(); // יצירת רשימה של המוצרים
 
             string ConnStr = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString; // שליפת מחרוזת ההתחברות מתוך קובץ הגדרות האפליקציה / שרת web.config
             SqlConnection Conn = new SqlConnection(ConnStr); // יצירת אובייקט מסוג צינור והגדרת מחרוזת ההתחברות של הצינור לבסיס הנתונים 
-            
+
             //Conn.ConnectionString = ConnStr; // הגדרת מחרוזת ההתחברות לאחר יצירת האובייקט, זו אופציה נוספת להגדרה
 
             Conn.Open(); // פתיחת הצינור לבסיס הנתונים
@@ -38,7 +57,7 @@ namespace Ecommerce
 
             Dr = Cmd.ExecuteReader(); // הפעלת השאילתה וקבלת תוצאות השאילתה לתוך אובייקט קורא נתונים 
 
-            while(Dr.Read())
+            while (Dr.Read())
             {
                 p = new Product()
                 {
@@ -46,10 +65,7 @@ namespace Ecommerce
                     Pname = Dr["Pname"] + "",
                     Price = float.Parse(Dr["Price"] + ""),
                     Pdesc = Dr["Pdesc"] + "",
-                    Picname = Dr["Picname"] + "",
-                    Cid = int.Parse(Dr["Cid"] + ""),
-                    Status = Dr["Status"] + "",
-                    AddDate = DateTime.Parse(Dr["AddDate"]+"")
+                    Picname = Dr["Picname"] + ""
                 };
                 LstProd.Add(p); // הוספת המוצר לרשימת המוצרים
             }
@@ -89,7 +105,7 @@ namespace Ecommerce
 
 
 
-            /*List<Product> products = new List<Product>();
+            List<Product> products = new List<Product>();
             products.Add(new Product()
             {
                 Pid = 1,
@@ -124,7 +140,7 @@ namespace Ecommerce
                 AddDate = DateTime.Now
             });
 
-            Application["Products"] = products;*/
+            Application["Products"] = products;
 
             List<Category> categories = new List<Category>();
             categories.Add(new Category()
@@ -151,7 +167,7 @@ namespace Ecommerce
             Application["Categories"] = categories;
 
 
-            Conn.Close(); // סגירת הצינור לבסיס הנתונים
+            Conn.Close(); // סגירת הצינור לבסיס הנתונים*/
         }
 
         protected void Session_Start(object sender, EventArgs e)

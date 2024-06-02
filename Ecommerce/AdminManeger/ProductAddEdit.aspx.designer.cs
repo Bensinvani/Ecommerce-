@@ -33,6 +33,15 @@ namespace Ecommerce.AdminManeger
         protected global::System.Web.UI.WebControls.TextBox TxtPname;
 
         /// <summary>
+        /// ReqPname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPname;
+
+        /// <summary>
         /// TxtPrice control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Ecommerce.AdminManeger
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtPrice;
+
+        /// <summary>
+        /// ReqPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPrice;
 
         /// <summary>
         /// TxtPdesc control.
@@ -51,13 +69,49 @@ namespace Ecommerce.AdminManeger
         protected global::System.Web.UI.WebControls.TextBox TxtPdesc;
 
         /// <summary>
-        /// TxtPicname control.
+        /// ReqPdesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPicname;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPdesc;
+
+        /// <summary>
+        /// DdlCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlCategory;
+
+        /// <summary>
+        /// ReqCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqCategory;
+
+        /// <summary>
+        /// ImgPicname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgPicname;
+
+        /// <summary>
+        /// UploadPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload UploadPic;
 
         /// <summary>
         /// BtnSave control.
@@ -67,5 +121,14 @@ namespace Ecommerce.AdminManeger
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnSave;
+
+        /// <summary>
+        /// BtnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnDelete;
     }
 }

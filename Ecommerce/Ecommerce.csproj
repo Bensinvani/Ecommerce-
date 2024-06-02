@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AdminManeger\.gitignore" />
     <Content Include="AdminManeger\404.html" />
+    <Content Include="AdminManeger\CategoryAddEdit.aspx" />
     <Content Include="AdminManeger\Default.aspx" />
     <Content Include="AdminManeger\blank.html" />
     <Content Include="AdminManeger\buttons.html" />
@@ -1771,6 +1772,7 @@
     <Content Include="AdminManeger\vendor\jquery\jquery.min.js" />
     <Content Include="AdminManeger\vendor\jquery\jquery.slim.js" />
     <Content Include="AdminManeger\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="CategoryList.aspx" />
     <Content Include="Checkout-old.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="css\bootstrap-grid.css" />
@@ -1792,6 +1794,11 @@
     <Content Include="Default-old.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\categories\books.jpeg" />
+    <Content Include="images\categories\Electronics.jpg" />
+    <Content Include="images\categories\Fashion.jpg" />
+    <Content Include="images\categories\grosery.jpeg" />
+    <Content Include="images\categories\Sports.jpg" />
     <Content Include="images\Clients\maya.jpg" />
     <Content Include="images\Clients\skitrip.jpg" />
     <Content Include="images\products\bread.jpeg" />
@@ -1806,12 +1813,21 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
+    <Content Include="ProductListByCategory.aspx" />
     <Content Include="ProductsList-old.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminManeger\CategoryAddEdit.aspx.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManeger\CategoryAddEdit.aspx.designer.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminManeger\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1834,9 +1850,22 @@
       <DependentUpon>ProductAddEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\BLL\City.cs" />
+    <Compile Include="App_Code\DAL\CategoryDAL.cs" />
+    <Compile Include="App_Code\DAL\CityDAL.cs" />
+    <Compile Include="App_Code\DAL\ClientDAL.cs" />
+    <Compile Include="App_Code\DAL\ProductDAL.cs" />
+    <Compile Include="App_Code\DbContext.cs" />
+    <Compile Include="App_Code\GlobFunc.cs" />
     <Compile Include="App_Code\BLL\Product.cs" />
     <Compile Include="App_Code\BLL\Category.cs" />
     <Compile Include="App_Code\BLL\Client.cs" />
+    <Compile Include="CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Checkout-old.aspx.cs">
       <DependentUpon>Checkout-old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1882,12 +1911,26 @@
     <Compile Include="MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductListByCategory.aspx.cs">
+      <DependentUpon>ProductListByCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductListByCategory.aspx.designer.cs">
+      <DependentUpon>ProductListByCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductsList-old.aspx.cs">
       <DependentUpon>ProductsList-old.aspx</DependentUpon>
@@ -2143,6 +2186,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

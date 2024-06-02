@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,5 +17,24 @@ namespace BLL
         public string Status { get; set; } // סטאטוס 
         public DateTime AddDate { get; set; } // תאריך הוספה
 
+        public static List<Product> GetAll()
+        {
+            return ProductDAL.GetAll();
+        }
+
+        public static Product GetById(int Id)
+        {
+            return ProductDAL.GetById(Id);
+        }
+
+        public void Save()
+        {
+            ProductDAL.Save(this);
+        }
+
+        public static void Delete(int Id)
+        {
+            ProductDAL.Delete(Id);
+        }
     }
 }

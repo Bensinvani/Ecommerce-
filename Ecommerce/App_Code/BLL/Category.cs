@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ecommerce.App_Code.BLL;
+using Ecommerce.App_Code.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +15,26 @@ namespace BLL
         public string Picname { get; set; } // שם תמונה
         public int ParentCid { get; set; } // קוד קטגורית אב 
         public string Status { get; set; } // סטאטוס
-        public string AddDate { get; set; } // תאריך הוספה
+        public DateTime AddDate { get; set; } // תאריך הוספה
+
+        public static List<Category> GetAll()
+        {
+            return CategoryDAL.GetAll();
+        }
+
+        public static Category GetById(int Id)
+        {
+            return CategoryDAL.GetById(Id);
+        }
+
+        public void Save()
+        {
+            CategoryDAL.Save(this);
+        }
+
+        public static void Delete(int Id)
+        {
+            CategoryDAL.Delete(Id);
+        }
     }
 }

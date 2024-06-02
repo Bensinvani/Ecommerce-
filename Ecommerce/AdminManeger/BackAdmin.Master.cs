@@ -11,7 +11,10 @@ namespace Ecommerce.AdminManeger
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Login"] == null) // בדיקה האם המשתמש מזוהה ומוכר במערכת
+            {
+                Response.Redirect("/Login.aspx");
+            }
         }
     }
 }

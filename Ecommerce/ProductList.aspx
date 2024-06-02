@@ -15,11 +15,29 @@
             font-size: 12px;
             color: gray;
         }
+
+        thead.thead-light th, tfoot.thead-light th {
+            padding: 10px;
+            font-size: 12px;
+            color: gray;
+            background-color: #f8f9fc;
+        }
+
+        .description-column {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainCnt" runat="server">
     <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">ניהול מוצרים</h1>
+            <a href="/AdminManeger/ProductAddEdit.aspx" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> הוסף מוצר חדש</a>
+        </div>
         <!-- DataTables Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -33,8 +51,9 @@
                                 <th class="small-gray-text">קוד מוצר</th>
                                 <th class="small-gray-text">שם מוצר</th>
                                 <th class="small-gray-text">מחיר</th>
-                                <th class="small-gray-text">תיאור מוצר</th>
+                                <th class="small-gray-text description-column">תיאור מוצר</th>
                                 <th class="small-gray-text">תמונה</th>
+                                <th class="small-gray-text">קטגוריה</th>
                                 <th class="small-gray-text">ניהול</th>
                             </tr>
                         </thead>
@@ -43,8 +62,9 @@
                                 <th class="small-gray-text">קוד מוצר</th>
                                 <th class="small-gray-text">שם מוצר</th>
                                 <th class="small-gray-text">מחיר</th>
-                                <th class="small-gray-text">תיאור מוצר</th>
+                                <th class="small-gray-text description-column">תיאור מוצר</th>
                                 <th class="small-gray-text">תמונה</th>
+                                <th class="small-gray-text">קטגוריה</th>
                                 <th class="small-gray-text">ניהול</th>
                             </tr>
                         </tfoot>
@@ -55,8 +75,9 @@
                                         <td><%# Eval("Pid") %></td>
                                         <td><%# Eval("Pname") %></td>
                                         <td><%# Eval("Price") %></td>
-                                        <td><%# Eval("Pdesc") %></td>
-                                        <td><img src="/images/products/<%# Eval("Picname") %>" width="40" /></td>
+                                        <td class="description-column"><%# Eval("Pdesc") %></td>
+                                        <td><img src="/images/products/<%# Eval("Picname") %>" width="50" /></td>
+                                        <td><%# Eval("CategoryName") %></td>
                                         <td><a href="/AdminManeger/ProductAddEdit.aspx?Pid=<%# Eval("Pid") %>">ערוך <span class="fa fa-pencil"></span></a></td>
                                     </tr>
                                 </ItemTemplate>
