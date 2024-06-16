@@ -169,7 +169,7 @@ namespace DAL
         {
             DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
             string Sql = "";
-            if (product.Pid == 0)
+            if (product.Pid == -1)
             {
                 Sql = $"INSERT INTO T_Product (Pname, Price, Pdesc, Picname, Cid, Status, AddDate) VALUES ('{product.Pname}', {product.Price}, '{product.Pdesc}', '{product.Picname}', {product.Cid}, 'Active', GETDATE())";
             }

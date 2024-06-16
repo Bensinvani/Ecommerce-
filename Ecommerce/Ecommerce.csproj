@@ -1805,6 +1805,7 @@
     <Content Include="images\products\Egg.jpeg" />
     <Content Include="images\products\iphone.jpeg" />
     <Content Include="images\products\Milk.jpeg" />
+    <Content Include="images\products\refrigerator.jpeg" />
     <Content Include="images\products\ScreenComp.jpeg" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
@@ -1818,6 +1819,8 @@
     <Content Include="ProductListByCategory.aspx" />
     <Content Include="ProductsList-old.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="User-Controls\LoginCube.ascx" />
+    <Content Include="User-Controls\RecommendedProducts.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1946,6 +1949,20 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Controls\LoginCube.ascx.cs">
+      <DependentUpon>LoginCube.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User-Controls\LoginCube.ascx.designer.cs">
+      <DependentUpon>LoginCube.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Controls\RecommendedProducts.ascx.cs">
+      <DependentUpon>RecommendedProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User-Controls\RecommendedProducts.ascx.designer.cs">
+      <DependentUpon>RecommendedProducts.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

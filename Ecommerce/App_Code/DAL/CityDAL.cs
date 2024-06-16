@@ -106,7 +106,7 @@ namespace Ecommerce.App_Code.DAL
         {
             DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
             string sql = "";
-            if (city.CityId == 0)
+            if (city.CityId == -1)
             {
                 sql = $"INSERT INTO T_City (CityName, CityStatus, CityAddedDate) VALUES ('{city.CityName}', 'Active', GETDATE())";
             }

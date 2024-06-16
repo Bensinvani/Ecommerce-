@@ -130,13 +130,13 @@ namespace Ecommerce.App_Code.DAL
         {
             DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
             string sql = "";
-            if (client.ClientId == 0)
+            if (client.ClientId == -1)
             {
-                sql = $"INSERT INTO T_Client (ClientFirstName, ClientLastName, ClientAddress, ClientCity, ClientPhone, ClientEmail, ClientPassword, ClientStatus, ClientPic, ClientAddedDate) VALUES ('{client.ClientFirstName}', '{client.ClientLastName}', '{client.ClientAddress}', '{client.ClientCity}', {client.ClientPhone}, '{client.ClientEmail}', '{client.ClientPassword}', 'Active', '{client.ClientPic}', GETDATE())";
+                sql = $"INSERT INTO T_Client (ClientFirstName, ClientLastName, ClientAddress, ClientCity, ClientPhone, ClientEmail, ClientPassword, ClientStatus, ClientPic, ClientAddedDate) VALUES ('{client.ClientFirstName}', '{client.ClientLastName}', '{client.ClientAddress}', '{client.ClientCity}', '{client.ClientPhone}', '{client.ClientEmail}', '{client.ClientPassword}', 'Active', '{client.ClientPic}', GETDATE())";
             }
             else
             {
-                sql = $"UPDATE T_Client SET ClientFirstName='{client.ClientFirstName}', ClientLastName='{client.ClientLastName}', ClientAddress='{client.ClientAddress}', ClientCity='{client.ClientCity}', ClientPhone={client.ClientPhone}, ClientEmail='{client.ClientEmail}', ClientPassword='{client.ClientPassword}', ClientStatus='{client.ClientStatus}', ClientPic='{client.ClientPic}' WHERE ClientId={client.ClientId}";
+                sql = $"UPDATE T_Client SET ClientFirstName='{client.ClientFirstName}', ClientLastName='{client.ClientLastName}', ClientAddress='{client.ClientAddress}', ClientCity='{client.ClientCity}', ClientPhone='{client.ClientPhone}', ClientEmail='{client.ClientEmail}', ClientPassword='{client.ClientPassword}', ClientStatus='{client.ClientStatus}', ClientPic='{client.ClientPic}' WHERE ClientId={client.ClientId}";
             }
             Db.ExecuteNonQuery(sql); // הפעלת השאילתה לביצוע פעולה על בסיס הנתונים
             Db.Close();

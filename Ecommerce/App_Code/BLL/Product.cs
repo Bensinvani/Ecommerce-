@@ -17,6 +17,13 @@ namespace BLL
         public string Status { get; set; } // סטאטוס 
         public DateTime AddDate { get; set; } // תאריך הוספה
 
+        public static List<Product> GetRecommended()
+        {
+            List<Product> allProducts = GetAll();
+            Random rnd = new Random();
+            return allProducts.OrderBy(x => rnd.Next()).Take(5).ToList();
+        }
+
         public static List<Product> GetAll()
         {
             return ProductDAL.GetAll();

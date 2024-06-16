@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ecommerce
+namespace Ecommerce.User_Controls
 {
 
 
-    public partial class Login
+    public partial class RecommendedProducts
     {
 
         /// <summary>
-        /// LoginCube control.
+        /// rptRecommendedProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ecommerce.User_Controls.WebUserControl1 LoginCube;
+        protected global::System.Web.UI.WebControls.Repeater rptRecommendedProducts;
     }
 }

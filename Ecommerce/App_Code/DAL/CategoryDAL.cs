@@ -118,7 +118,7 @@ namespace Ecommerce.App_Code.DAL
         {
             DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
             string sql = "";
-            if (category.Cid == 0)
+            if (category.Cid == -1)
             {
                 sql = $"INSERT INTO T_Category (Cname, Cdesc, Picname, ParentCid, Status, AddDate) VALUES ('{category.Cname}', '{category.Cdesc}', '{category.Picname}', {category.ParentCid}, 'Active', GETDATE())";
             }
